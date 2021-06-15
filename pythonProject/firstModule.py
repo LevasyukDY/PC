@@ -76,18 +76,17 @@ def lab7(n):
     return k
 
 
-def lab8(n):
+def lab8(a, n):
     """
     Получение матрицы элемент, к-ой равен сумме элементов данной матрицы
     расположенных в области, как на рисунке
     :param n:
     :return:
     """
-    a = np.ones((n, n))
     b = np.zeros((n, n))
     for i in range(n):
         summ = 0
         for j in range(n):
-            summ += a[n - i - 1:n][n - j - 1:n].sum()  # TODO: сократить циклы
-            b[i][j] = summ
-    print(b)
+            summ += a[n - i - 1:n][n - j - 1:n].sum() # до n-1
+            b[i][j] = summ #TODO: поправить индексы
+    return b
