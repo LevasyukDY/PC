@@ -61,7 +61,7 @@ from contracts import contract
 @contract
 def ExampleSum(a, b):
     """
-    :param a: int|float > 0 
+    :param a: int|float > 0 # тип может быть либо int либо float
     :param b: int|float > 0
     :return: int|float
     """
