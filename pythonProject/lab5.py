@@ -1,11 +1,13 @@
 import firstModule
 # Задание 136 к
 
-n = 10
 a = []
+n = 10
+low = -10
+high = 10
 
-summ = firstModule.lab5(a, n)
+a = firstModule.randArray(a, n, low, high)
+res = firstModule.lab5(a, n)
 firstModule.printArr(a, n)
 
-print("Summ = ", summ)
-print("Result = ", 2 * summ**2)
+print("Result = ", res)

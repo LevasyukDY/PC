@@ -25,18 +25,28 @@ def printArr(a, n):
         print(a[i])
 
 
+def randArray(a, n, low, high):
+    """
+    Создание массива
+    :param a:
+    :param n:
+    :return:
+    """
+    for i in range(n):
+        a.append(random.randint(low, high))
+    return a
+
 def lab5(a, n):
     """
     Вычисление суммы элементов массива в квадрате умноженное на два
     :param a:
     :param n:
-    :return:
+    :return summ:
     """
     summ = 0
     for i in range(n):
-        a.append(random.randint(-10, 10))  # TODO: создание и добавление отдельно
         summ += a[i]
-    return summ
+    return 2 * summ**2
 
 
 def lab6(a):
@@ -44,7 +54,7 @@ def lab6(a):
     Нахождение членов последовательности, к-ые
     явл-ся удвоенными нечётными числами
     :param a:
-    :return:
+    :return b:
     """
     b = []
     print("_____________________________________")
