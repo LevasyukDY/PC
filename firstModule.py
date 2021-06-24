@@ -1,8 +1,7 @@
 import random
 import numpy as np
 
-
-def randArr(a, n):
+def randArr(a,n):
     """
     Заполнение массива случайными числами
     :param a:
@@ -13,8 +12,7 @@ def randArr(a, n):
         a.append(random.randint(1, 19))
         print(a[i])
 
-
-def printArr(a, n):
+def printArr(a,n):
     """
     Печать массива на экране
     :param a:
@@ -24,37 +22,25 @@ def printArr(a, n):
     for i in range(n):
         print(a[i])
 
-
-def randArray(a, n, low, high):
-    """
-    Создание массива
-    :param a:
-    :param n:
-    :return:
-    """
-    for i in range(n):
-        a.append(random.randint(low, high))
-    return a
-
-def lab5(a, n):
+def lab5(a,n):
     """
     Вычисление суммы элементов массива в квадрате умноженное на два
     :param a:
     :param n:
-    :return summ:
+    :return:
     """
     summ = 0
     for i in range(n):
+        a.append(random.randint(-10, 10)) # TODO: создание и добавление отдельно
         summ += a[i]
-    return 2 * summ**2
-
+    return summ
 
 def lab6(a):
     """
     Нахождение членов последовательности, к-ые
     явл-ся удвоенными нечётными числами
     :param a:
-    :return b:
+    :return:
     """
     b = []
     print("_____________________________________")
@@ -62,7 +48,6 @@ def lab6(a):
         if (a[i] % 2 == 0) and ((a[i] // 2) % 2 != 0):
             b.append(a[i])
     return b
-
 
 def lab7(n):
     """
@@ -75,26 +60,27 @@ def lab7(n):
         k += i ** i
     return k
 
-
-def lab8(a, n):
+def lab8(n):
     """
     Получение матрицы элемент, к-ой равен сумме элементов данной матрицы
     расположенных в области, как на рисунке
     :param n:
     :return:
     """
+    a = np.ones((n, n))
     b = np.zeros((n, n))
-    for i in range(n):
-        for j in range(n):
-            summ = a[n - i - 1:n][n - j - 1:n].sum()       # до n-1
-            b[i][j] = summ
-
-    # ПРОШЛЫЙ ВАРИАНТ
+    i = j = 0
     for i in range(n):
         for j in range(n):
             summ = 0
-            for k in range(n - i - 1, n):
-                for l in range(n - j - 1, n):
-                    summ += a[k][l]
+            summ = a[n - i - 1:n][n - j - 1:n].sum()
             b[i][j] = summ
-    return b
+    print(b)
+
+#     for i in range(n):
+#             for j in range(n):
+#                 summ = 0
+#                 for k in range(n - i - 1, n):
+#                     for l in range(n - j - 1,n):
+#                         summ += a[k][l]
+#                 b[i][j] = summ
