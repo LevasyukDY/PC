@@ -1,6 +1,8 @@
 import firstModule
 # 677б
 
-n = 3
+n = 10
 
-firstModule.lab8(n)
+b = firstModule.lab8(n)
+
+print(b)

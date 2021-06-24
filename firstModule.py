@@ -68,14 +68,23 @@ def lab8(n):
     :return:
     """
     a = np.ones((n, n))
+    print(a)
     b = np.zeros((n, n))
-    i = j = 0
+    
+#     summ = a.sum()
+#     for k in range(len(a)):
+#         for p in range(len(a)):
+#             b[k,p] = (summ - (a[k,:].sum() + a[:,p].sum())) + a[k,p]
+#     return b
+    
     for i in range(n):
         for j in range(n):
             summ = 0
-            summ = a[n - i - 1:n][n - j - 1:n].sum()
+            summ = a[0:i+1,j:n+1].sum()   # ИСПОЛЬЗОВАТЬ [,]
+            print(a[0:i+1,j:n+1])
+            # summ = a[n - i - 1:n][n - j - 1:n].sum()
             b[i][j] = summ
-    print(b)
+    return(b)
 
 #     for i in range(n):
 #             for j in range(n):
